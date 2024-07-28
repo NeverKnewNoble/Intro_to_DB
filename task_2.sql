@@ -1,3 +1,11 @@
+-- Creating the authors table
+CREATE TABLE IF NOT EXISTS authors (
+    author_id INT AUTO_INCREMENT PRIMARY KEY,
+    author_name VARCHAR(255) NOT NULL,
+    birth_date DATE,
+    nationality VARCHAR(100)
+);
+
 -- Creating the books table
 CREATE TABLE IF NOT EXISTS books (
     book_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -7,14 +15,6 @@ CREATE TABLE IF NOT EXISTS books (
     price DECIMAL(10, 2),
     publish_date DATE,
     FOREIGN KEY (author_id) REFERENCES authors(author_id)
-);
-
--- Creating the authors table
-CREATE TABLE IF NOT EXISTS authors (
-    author_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    birth_date DATE,
-    nationality VARCHAR(100)
 );
 
 -- Creating the customers table
